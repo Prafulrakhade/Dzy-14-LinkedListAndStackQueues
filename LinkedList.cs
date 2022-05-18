@@ -24,30 +24,51 @@ namespace LinkedListProblem
                 Console.WriteLine("{0} inserted into the linkedlist\n", n.data);
             }
         }
-        public void Insert(int index, int data)
+        //public void Insert(int index, int data)
+        //{
+        //    Node n = new Node(data);
+        //    if (index == 0)
+        //    {
+        //        n.next = head.next;
+        //        head = n;
+        //        Console.WriteLine("{0} is inserted into Linkedlist", n.data);
+        //    }
+
+        //    Node t = head, pre = null;
+        //    while (index > 0 && t != null)
+        //    {
+        //        index--;
+        //        pre = t;
+        //        t = t.next;
+        //    }
+        //    if (index == 0)
+        //    {
+        //        pre.next = n;
+        //        n.next = t;
+        //        Console.WriteLine("{0} is inserted into LinkedList", n.data);
+        //    }
+        //   // throw new NullReferenceException("index is not in range\n");
+        //}
+
+        public void Pop(int input)
         {
-            Node n = new Node(data);
-            if (index == 0)
+            if (head.next == null)
             {
-                n.next = head.next;
-                head = n;
-                Console.WriteLine("{0} is inserted into Linkedlist", n.data);
+                head = null;
             }
 
             Node t = head, pre = null;
-            while (index > 0 && t != null)
+            while (t != null)
             {
-                index--;
+                if (t.data == input)
+                {
+                    pre.next = t.next;
+                    Console.WriteLine("{0} top element is deleted from linked List", input);
+
+                }
                 pre = t;
                 t = t.next;
             }
-            if (index == 0)
-            {
-                pre.next = n;
-                n.next = t;
-                Console.WriteLine("{0} is inserted into LinkedList", n.data);
-            }
-           // throw new NullReferenceException("index is not in range\n");
         }
         public void Display()
         {
