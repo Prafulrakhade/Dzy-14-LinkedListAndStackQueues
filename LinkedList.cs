@@ -24,6 +24,22 @@ namespace LinkedListProblem
                 Console.WriteLine("{0} inserted into the linkedlist\n", n.data);
             }
         }
+        public void Append(int data)
+        {
+            Node n = new Node(data);
+            if (head == null)
+            {
+                head = n;
+                Console.WriteLine("{0} Appended", n.data);
+            }
+            Node t = head;
+            while (t.next != null)
+            {
+                t = t.next;
+            }
+            t.next = n;
+            Console.WriteLine("{0} Appended", n.data);
+        }
         public void Insert(int index, int data)
         {
             Node n = new Node(data);

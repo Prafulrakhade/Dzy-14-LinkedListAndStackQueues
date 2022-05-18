@@ -12,6 +12,9 @@ namespace LinkedListProblem
             list.Add(56);           
 
             list.Insert(1, 30);
+            //list.Add(56);
+            //list.Add(30);
+            //list.Add(70);
             list.Display();
         }
     }
