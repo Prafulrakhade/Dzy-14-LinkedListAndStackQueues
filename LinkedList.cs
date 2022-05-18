@@ -9,20 +9,36 @@ namespace LinkedListProblem
     internal class LinkedList
     {
         internal Node head;
-        public void Add(int data)
+        //public void Add(int data)
+        //{
+        //    Node n = new Node(data);
+        //    if (head == null)
+        //    {
+        //        head = n;
+        //        Console.WriteLine("{0} inserted into the linkedList\n", n.data);
+        //    }
+        //    else
+        //    {
+        //        n.next = head;
+        //        head = n;
+        //        Console.WriteLine("{0} inserted into the linkedlist\n", n.data);
+        //    }
+        //}
+        public void Append(int data)
         {
             Node n = new Node(data);
             if (head == null)
             {
                 head = n;
-                Console.WriteLine("{0} inserted into the linkedList\n", n.data);
+                Console.WriteLine("{0} Appended", n.data);
             }
-            else
+            Node t = head;
+            while (t.next != null)
             {
-                n.next = head;
-                head = n;
-                Console.WriteLine("{0} inserted into the linkedlist\n", n.data);
+                t = t.next;
             }
+            t.next = n;
+            Console.WriteLine("{0} Appended", n.data);
         }
         public void Display()
         {
